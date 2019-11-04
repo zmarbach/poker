@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ce7a3c3a-3129-4f66-ba6b-cbbf163c062b" name="Default Changelist" comment="" />
+    <list default="true" id="ce7a3c3a-3129-4f66-ba6b-cbbf163c062b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Dealer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/HandAnalyzer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/HandAnalyzer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/PokerTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/PokerTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/HandAnalyzer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/HandAnalyzer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/cards.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/PokerTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/PokerTests.class" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +57,14 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.PokerTests.Compare_Should_Return_Neg_One_When_X_And_Y_Are_Both_Pair_But_Y_is_Better_Pair">
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="cards" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="PokerTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="cards" />
       <option name="PACKAGE_NAME" value="" />
@@ -62,16 +79,6 @@
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="PokerTests" />
       <option name="METHOD_NAME" value="Analyze_Should_Recognize_A_Four_Of_A_Kind" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PokerTests.Analyze_Should_Recognize_A_Royal_Flush" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="cards" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="PokerTests" />
-      <option name="METHOD_NAME" value="Analyze_Should_Recognize_A_Royal_Flush" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -99,11 +106,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.PokerTests.Compare_Should_Return_Neg_One_When_X_And_Y_Are_Both_Pair_But_Y_is_Better_Pair" />
         <item itemvalue="JUnit.PokerTests.Compare_Should_Return_One_When_X_And_Y_Are_Both_High_Card_But_X_is_Higher" />
         <item itemvalue="JUnit.PokerTests" />
         <item itemvalue="JUnit.PokerTests.Analyze_Should_Recognize_A_Four_Of_A_Kind" />
-        <item itemvalue="JUnit.PokerTests.Analyze_Should_Recognize_A_Royal_Flush" />
       </list>
     </recent_temporary>
   </component>
@@ -119,5 +126,16 @@
       <updated>1572267905765</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

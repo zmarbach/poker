@@ -9,22 +9,25 @@ public class HandAnalyzer {
         return hand;
     }
 
-    public void setHand(List<Card> hand) {
-        this.hand = hand;
-    }
+    public List<Card> sort(List<Card> hand) {
 
-    public void sort(List<Card> hand) {
+//        List<Faces> sortedFaces = hand.stream().map(card -> card.getFace()).sorted((x, y) -> Integer.compare(y.getValue(), x.getValue())).collect(Collectors.toList());
+//        List<Card> sortedHand = new ArrayList<>();
+//
+//        for (var face : sortedFaces) {
+//            sortedHand.add(new Card(face, face.getValue()));
+//        }
+
         Collections.sort(hand, (o1, o2) -> {
             Integer o1Value = o1.getFace().getValue();
             Integer o2Value = o2.getFace().getValue();
-            return o1Value.compareTo(o2Value);
+            return o2Value.compareTo(o1Value);
 
         });
-        hand = this.hand;
+        return hand;
     }
 
     public HandResult analyze(List<Card> hand) {
-        sort(hand);
 
         //start off with null handResult
         HandResult handResult = null;

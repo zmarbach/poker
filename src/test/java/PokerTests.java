@@ -479,8 +479,8 @@ public class PokerTests {
         y.add(new Card(Faces.THREE, Suits.SPADES));
         y.add(new Card(Faces.THREE, Suits.HEARTS));
         y.add(new Card(Faces.QUEEN, Suits.SPADES));
-        y.add(new Card(Faces.SIX, Suits.SPADES));
         y.add(new Card(Faces.SEVEN, Suits.SPADES));
+        y.add(new Card(Faces.SIX, Suits.SPADES));
 
         //Act
         var result = handAnalyzer.compare(x,y);
