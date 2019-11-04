@@ -10,18 +10,10 @@ public class HandAnalyzer {
     }
 
     public List<Card> sort(List<Card> hand) {
-
-//        List<Faces> sortedFaces = hand.stream().map(card -> card.getFace()).sorted((x, y) -> Integer.compare(y.getValue(), x.getValue())).collect(Collectors.toList());
-//        List<Card> sortedHand = new ArrayList<>();
-//
-//        for (var face : sortedFaces) {
-//            sortedHand.add(new Card(face, face.getValue()));
-//        }
-
-        Collections.sort(hand, (o1, o2) -> {
-            Integer o1Value = o1.getFace().getValue();
-            Integer o2Value = o2.getFace().getValue();
-            return o2Value.compareTo(o1Value);
+            Collections.sort(hand, (x, y) -> {
+            Integer xValue = x.getFace().getValue();
+            Integer yValue = y.getFace().getValue();
+            return yValue.compareTo(xValue);
 
         });
         return hand;
