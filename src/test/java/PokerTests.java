@@ -2,10 +2,11 @@ import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import static org.hamcrest.Matchers.containsInAnyOrder;
 import static org.hamcrest.junit.MatcherAssert.assertThat;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class PokerTests {
     HandAnalyzer handAnalyzer = new HandAnalyzer();
@@ -243,10 +244,12 @@ public class PokerTests {
         expectedListOfRemainingFaces.add(Faces.EIGHT);
         expectedListOfRemainingFaces.add(Faces.JACK);
 
+        var nonMatchingCards = expectedListOfRemainingFaces.stream().filter(card -> !remainingCards.contains(card)).collect(Collectors.toList());
+
         //Assert
         assertEquals(PokerHandsEnum.HIGH_CARD, result);
         assertEquals(Faces.KING, highCIT);
-        assertEquals(expectedListOfRemainingFaces, remainingCards);
+        assertEquals(0, nonMatchingCards.size());
     }
 
     @Test
@@ -380,11 +383,11 @@ public class PokerTests {
         x.add(new Card(Faces.NINE, Suits.CLUBS));
 
         List<Card> y = new ArrayList<Card>();
-        y.add(new Card(Faces.ACE, Suits.DIAMONDS));
         y.add(new Card(Faces.KING, Suits.SPADES));
         y.add(new Card(Faces.QUEEN, Suits.SPADES));
         y.add(new Card(Faces.JACK, Suits.SPADES));
         y.add(new Card(Faces.THREE, Suits.SPADES));
+        y.add(new Card(Faces.TWO, Suits.DIAMONDS));
 
         //Act
         var result = handAnalyzer.compare(x,y);
@@ -476,10 +479,10 @@ public class PokerTests {
         x.add(new Card(Faces.FIVE, Suits.CLUBS));
 
         List<Card> y = new ArrayList<Card>();
-        y.add(new Card(Faces.THREE, Suits.SPADES));
+        y.add(new Card(Faces.SEVEN, Suits.SPADES));
+        y.add(new Card(Faces.SEVEN, Suits.CLUBS));
         y.add(new Card(Faces.THREE, Suits.HEARTS));
         y.add(new Card(Faces.QUEEN, Suits.SPADES));
-        y.add(new Card(Faces.SEVEN, Suits.SPADES));
         y.add(new Card(Faces.SIX, Suits.SPADES));
 
         //Act
@@ -490,7 +493,7 @@ public class PokerTests {
     }
 
     @Test
-    public void Compare_Should_Return_One_When_X_And_Y_Are_Both_SAME_Pair_But_Y_has_High_Card() {
+    public void Compare_Should_Return_Neg_One_When_X_And_Y_Are_Both_SAME_Pair_But_Y_has_High_Card() {
         //Arrange
         List<Card> x = new ArrayList<Card>();
         x.add(new Card(Faces.TWO, Suits.CLUBS));
@@ -514,7 +517,7 @@ public class PokerTests {
     }
 
     @Test
-    public void Compare_Should_Return_Neg_One_When_X_And_Y_Are_Both_Four_Of_A_Kind_But_X_is_Higher() {
+    public void Compare_Should_Return_One_When_X_And_Y_Are_Both_Four_Of_A_Kind_But_X_is_Higher() {
         //Arrange
         List<Card> x = new ArrayList<Card>();
         x.add(new Card(Faces.QUEEN, Suits.SPADES));

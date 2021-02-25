@@ -192,12 +192,15 @@ public class HandAnalyzer {
                 for(var item : yHand.getRemainingFaces()) {
                     yValuesOfRemainingFaces.add(item.getValue());
                 }
+                var highCardInX = Collections.max(xValuesOfRemainingFaces);
+                var highCardInY = Collections.max(yValuesOfRemainingFaces);
 
-                for (int i = 0; i < xValuesOfRemainingFaces.size(); i++) {
-                    if (xValuesOfRemainingFaces.get(i) != yValuesOfRemainingFaces.get(i)) {
-                        return Integer.compare(xValuesOfRemainingFaces.get(i), yValuesOfRemainingFaces.get(i));
-                    }
-                }
+                return Integer.compare(highCardInX, highCardInY);
+//                for (int i = 0; i < xValuesOfRemainingFaces.size(); i++) {
+//                    if (xValuesOfRemainingFaces.get(i) != yValuesOfRemainingFaces.get(i)) {
+//                        return Integer.compare(xValuesOfRemainingFaces.get(i), yValuesOfRemainingFaces.get(i));
+//                    }
+//                }
             }
             //if highcards are different, then just compare the highcards in type (eg: pair of 3s is higher than pair of 2s)
             return Integer.compare(xHand.getHighCardInType().getValue(), yHand.getHighCardInType().getValue());
